@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "StartingLogin";
+    Layout = "~/Views/Shared/_Layout_starting_page.cshtml";
+}
+
+
+<section class="container-sect">
+    <div class="figure-bg">
+
+        <div class="plate_outline">
+            <div class="plate_wrapper">
+                <div class="log_sign_plate">
+
+                    <a>Login</a>
+
+                    <div>
+                        <form action="/Home/StartingLogin" method="post" class="log_sign_form_wrapper">
+                            @if (ViewBag.ErrorMessage != null)
+                            {
+                                <div style="height:25px; font-size:14px; text-align:center; margin:auto; color:orangered; font-weight:lighter; margin-top:-5px; margin-bottom:-20px;">
+                                    @ViewBag.ErrorMessage
+                                </div>
+                            }
+                            <div class="log_sign_form">
+                                <input id="input1" required  type="text" name="U_Username" />
+                                <label for="input1">Username</label>
+                            </div>
+                            <div class="log_sign_form">
+                                <input id="input2" required  type="password" name="U_Password" />
+                                <label for="input2">Password</label>
+                            </div>
+                            <br />
+
+                            <button type="submit" class="login_button">Login</button>
+
+
+
+                        </form>
+                    </div>
+
+
+                </div>
+
+                <div class="log_sign_plate_2">
+
+                    <p>Don't have an account?</p>
+                    <a class="to_signup" href="/Home/StartingSignUp">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

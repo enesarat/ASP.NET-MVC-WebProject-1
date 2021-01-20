@@ -1,0 +1,143 @@
+﻿
+@model onlineVoting.Models.Voter
+@{
+    ViewBag.Title = "StartingSignUp";
+    Layout = "~/Views/Shared/_Layout_starting_page.cshtml";
+}
+
+
+<section class="container-sect">
+    <div class="figure-bg">
+
+        <div class="plate_outline">
+            <div class="plate_wrapper_su">
+                <div class="log_sign_plate_su">
+
+                    <a>Sign Up</a>
+                    @if (ViewBag.ErrorMessageSU != null)
+                    {
+                        <div style="height:25px; font-size:14px; text-align:center; margin:auto; color:orangered; font-weight:lighter; margin-top:-20px; margin-bottom:-5px;">
+                            @ViewBag.ErrorMessageSU
+                        </div>
+                    }
+                    <div>
+                        @using (Html.BeginForm())
+                        {
+                            <div class="vertical_inputs double_flex">
+                                <div class="log_sign_form_us_double">
+                                    <input id="input1" required autocomplete="off" type="text" name="Name" />
+                                    <label for="input1">Name</label>
+
+                                </div>
+
+
+                                <div class="log_sign_form_us_double">
+                                    <input id="input2" required autocomplete="off" type="text" name="Surname" />
+                                    <label for="input2">Surname</label>
+                                </div>
+
+
+                            </div>
+
+                            <div class="vertical_inputs">
+                                <div class="log_sign_form_us">
+                                    <input id="input3" required autocomplete="off" type="text" name="Username" />
+                                    <label for="input3">Username</label>
+
+                                </div>
+
+                            </div>
+
+                            <div class="vertical_inputs">
+                                <div class="log_sign_form_us">
+                                    <input id="input4" required autocomplete="off" type="text" name="Email" />
+                                    <label for="input4">E-mail</label>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="vertical_inputs double_flex">
+                                <div class="log_sign_form_us_double">
+                                    <input id="input5" required autocomplete="off" type="password" name="Password" />
+                                    <label for="input5">Password</label>
+
+                                </div>
+
+                                <div class="log_sign_form_us_double">
+                                    <input id="input6" required autocomplete="off" type="password" name="PasswordConfirm" />
+                                    <label for="input6">Password Confirm</label>
+
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="vertical_inputs_ddl double_flex">
+                                <div>
+
+                                    <select id="country_ddm" name="Country">
+                                        <option selected="selected" value="" disabled="disabled"> </option>
+                                        <option value="1">Turkey</option>
+                                        <option value="2">Germany</option>
+                                        <option value="3">France</option>
+                                        <option value="4">England</option>
+                                        <option value="5">USA</option>
+                                        <option value="6">Russia</option>
+                                        <option value="7">Italy</option>
+                                        <option value="8">Spain</option>
+                                        <option value="9">China</option>
+                                    </select>
+                                    <label for="country_ddm">Country</label>
+                                </div>
+                            </div>
+
+
+                            <div class="vertical_inputs_ddl double_flex">
+                                <div>
+
+                                    <select id="sex_ddm" name="Sex">
+                                        <option selected="selected" value="" disabled="disabled"> </option>
+                                        <option value="1">Male</option>
+                                        <option value="2">Female</option>
+                                        <option value="3">Custom</option>
+                                    </select>
+                                    <label for="sex_ddm">Sex</label>
+                                </div>
+                            </div>
+
+
+                            <div class="vertical_inputs_ddl double_flex">
+                                <div>
+
+                                    <select id="age_ddm" name="Age">
+                                        <option selected="selected" value="" disabled="disabled"> </option>
+                                        @for (int i = 18; i <= 120; i++)
+                                        {
+                                            <option value="@i">@i</option>
+                                        }
+
+
+                                    </select>
+                                    <label for="age_ddm">Age</label>
+                                </div>
+                            </div>
+
+                            <div>
+                                <input class="su_button" type="submit" value="Sign Up" />
+                            </div>
+                        }
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+

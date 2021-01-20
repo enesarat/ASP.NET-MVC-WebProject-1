@@ -1,0 +1,42 @@
+﻿@model IEnumerable<onlineVoting.Models.Category>
+
+@{
+    ViewBag.Title = "Categories";
+    Layout = "~/Views/Shared/_Layout _admin.cshtml";
+}
+
+
+<div class="content_main_users">
+    <!--<p>content_main</p>	-->
+    <h2>CATEGORIES</h2>
+
+
+    <table class="TableStyle">
+        <thead>
+            <tr>
+                <th>Category ID</th>
+                <th>Category Name</th>
+                <th>Create Date</th>
+                <th>Update Date</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.CategoryID</td>
+                    <td>@item.CategoryName</td>
+                    <td>@item.CreateDate</td>
+                    <td>@item.EditDate</td>
+
+                    <td><a href="/Admin/EditCategory/@item.CategoryID" class="button_update">Update</a></td>
+                    <td><a href="/Admin/DeleteCategory/@item.CategoryID " class="button_delete">Delete</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <br />
+    <div><a href="/Admin/CreateCategory/ " class="button_add_c">Add Category</a></div>
+    <br />
+</div>

@@ -1,0 +1,69 @@
+﻿@model IEnumerable<onlineVoting.Models.Voting>
+@{
+    ViewBag.Title = "Vote";
+    Layout = "~/Views/Shared/_Layout_dynamic_pages.cshtml";
+    var questionNumber = 1;
+    var ans_idx_num = 0;
+
+}
+
+
+<div class="container_middle_V">
+    <div class="page_header">Vote</div>
+
+    @foreach (var voting in Model)
+    {
+        using (Html.BeginForm("Vote", "Home", FormMethod.Post, new { id = voting.VotingID }))
+        {
+
+
+            <div class="votingLabel">
+                <span style="color:#00487d; font-size:22px; text-decoration:underline;">@voting.VotingName</span>
+                <br /><br />
+                <div style="font-weight:normal; font-size:22px;"><span style="margin-right:15px; margin-left:5px; color:#0094ff; font-size:22px;">@questionNumber)</span> @voting.QuestionLine</div>
+                <br />
+                <div class="answerLabel">
+                    <div>
+                        @Html.Hidden("Id", voting.VotingID)
+                        <br />
+                        <input type="radio" id="ans_@questionNumber" name="vot_" value="yes" />
+                        <label for="ans_@questionNumber">Yes</label>
+
+                        <input type="radio" id="ans_@ans_idx_num" name="vot_" value="no" />
+                        <label for="ans_@ans_idx_num">No</label>
+                    </div>
+                    <div>
+                        <input class="button_add" type="submit" value="Vote IT" />
+                    </div>
+
+
+                </div>
+
+
+            </div><hr style="width:65%;" />
+            ans_idx_num--;
+            questionNumber++;
+
+        }
+
+
+    }
+    @if (ViewBag.msg != null)
+    {
+        {
+            <script type="text/javascript">
+                                window.onload = function ()
+                                {
+                                    alert("@ViewBag.ErrMsg");
+                                };
+            </script>
+
+        }
+
+        
+    }
+</div>
+
+<div class="container_right">
+
+</div>

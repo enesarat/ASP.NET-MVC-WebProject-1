@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VOTEITModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="Country_ID" />
+    </Key>
+    <Property Name="Country_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Country_Name" Type="nvarchar" MaxLength="25" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Gender">
+    <Key>
+      <PropertyRef Name="Gender_ID" />
+    </Key>
+    <Property Name="Gender_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Gender_Name" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Vote">
+    <Key>
+      <PropertyRef Name="C_ID" />
+    </Key>
+    <Property Name="C_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="C_Name" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="C_Description" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="CU_Key" Type="int" />
+    <Property Name="CV_Key" Type="int" />
+    <Property Name="CO_Key" Type="int" />
+  </EntityType>
+  <EntityType Name="Voter">
+    <Key>
+      <PropertyRef Name="U_ID" />
+    </Key>
+    <Property Name="U_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="U_Name" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="U_Surname" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="U_Username" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="U_Email" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="U_Password" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="U_Country" Type="int" />
+    <Property Name="U_Sex" Type="int" />
+    <Property Name="U_Age" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Voting">
+    <Key>
+      <PropertyRef Name="V_ID" />
+    </Key>
+    <Property Name="V_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="V_Name" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="V_Category" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="V_Description" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="V_S_Date" Type="datetime" Nullable="false" />
+    <Property Name="V_E_Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VotingOption">
+    <Key>
+      <PropertyRef Name="O_ID" />
+    </Key>
+    <Property Name="O_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="O_Description" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="OV_Key" Type="int" />
+    <Property Name="Amount" Type="int" />
+  </EntityType>
+  <Association Name="fk_vote_user">
+    <End Role="Voter" Type="Self.Voter" Multiplicity="0..1" />
+    <End Role="Vote" Type="Self.Vote" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Voter">
+        <PropertyRef Name="U_ID" />
+      </Principal>
+      <Dependent Role="Vote">
+        <PropertyRef Name="CU_Key" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_vote_voting">
+    <End Role="Voting" Type="Self.Voting" Multiplicity="0..1" />
+    <End Role="Vote" Type="Self.Vote" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Voting">
+        <PropertyRef Name="V_ID" />
+      </Principal>
+      <Dependent Role="Vote">
+        <PropertyRef Name="CV_Key" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_vote_votOption">
+    <End Role="VotingOption" Type="Self.VotingOption" Multiplicity="0..1" />
+    <End Role="Vote" Type="Self.Vote" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VotingOption">
+        <PropertyRef Name="O_ID" />
+      </Principal>
+      <Dependent Role="Vote">
+        <PropertyRef Name="CO_Key" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_voter_country">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="Voter" Type="Self.Voter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="Country_ID" />
+      </Principal>
+      <Dependent Role="Voter">
+        <PropertyRef Name="U_Country" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_voter_gender">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="0..1" />
+    <End Role="Voter" Type="Self.Voter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="Gender_ID" />
+      </Principal>
+      <Dependent Role="Voter">
+        <PropertyRef Name="U_Sex" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_votOption_voting">
+    <End Role="Voting" Type="Self.Voting" Multiplicity="0..1" />
+    <End Role="VotingOption" Type="Self.VotingOption" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Voting">
+        <PropertyRef Name="V_ID" />
+      </Principal>
+      <Dependent Role="VotingOption">
+        <PropertyRef Name="OV_Key" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="VOTEITModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Country" EntityType="Self.Country" Schema="OnlineVotingSystem" store:Type="Tables" />
+    <EntitySet Name="Gender" EntityType="Self.Gender" Schema="OnlineVotingSystem" store:Type="Tables" />
+    <EntitySet Name="Vote" EntityType="Self.Vote" Schema="OnlineVotingSystem" store:Type="Tables" />
+    <EntitySet Name="Voter" EntityType="Self.Voter" Schema="OnlineVotingSystem" store:Type="Tables" />
+    <EntitySet Name="Voting" EntityType="Self.Voting" Schema="OnlineVotingSystem" store:Type="Tables" />
+    <EntitySet Name="VotingOption" EntityType="Self.VotingOption" Schema="OnlineVotingSystem" store:Type="Tables" />
+    <AssociationSet Name="fk_vote_user" Association="Self.fk_vote_user">
+      <End Role="Voter" EntitySet="Voter" />
+      <End Role="Vote" EntitySet="Vote" />
+    </AssociationSet>
+    <AssociationSet Name="fk_vote_voting" Association="Self.fk_vote_voting">
+      <End Role="Voting" EntitySet="Voting" />
+      <End Role="Vote" EntitySet="Vote" />
+    </AssociationSet>
+    <AssociationSet Name="fk_vote_votOption" Association="Self.fk_vote_votOption">
+      <End Role="VotingOption" EntitySet="VotingOption" />
+      <End Role="Vote" EntitySet="Vote" />
+    </AssociationSet>
+    <AssociationSet Name="fk_voter_country" Association="Self.fk_voter_country">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Voter" EntitySet="Voter" />
+    </AssociationSet>
+    <AssociationSet Name="fk_voter_gender" Association="Self.fk_voter_gender">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Voter" EntitySet="Voter" />
+    </AssociationSet>
+    <AssociationSet Name="fk_votOption_voting" Association="Self.fk_votOption_voting">
+      <End Role="Voting" EntitySet="Voting" />
+      <End Role="VotingOption" EntitySet="VotingOption" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

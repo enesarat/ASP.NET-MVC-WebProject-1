@@ -1,0 +1,48 @@
+﻿@model IEnumerable<onlineVoting.Models.Voting>
+
+@{
+    ViewBag.Title = "Votings";
+    Layout = "~/Views/Shared/_Layout _admin.cshtml";
+}
+
+
+<div class="content_main_users">
+    <!--<p>content_main</p>	-->
+    <h2>VOTINGS</h2>
+
+
+    <table class="TableStyle">
+        <thead>
+            <tr>
+                <th>Voting ID</th>
+                <th>Voting Name</th>
+                <th>Voting/Question</th>
+                <th>Voting Category</th>
+                <th>Ceate Date</th>
+                <th>Update Date</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.VotingID</td>
+                    <td>@item.VotingName</td>
+                    <td>@item.QuestionLine</td>
+                    <td>@item.VCategoryID</td>
+                    <td>@item.CreateDate</td>
+                    <td>@item.EditDate</td>
+
+
+                    <td><a href="/Admin/EditVoting/@item.VotingID" class="button_update">Update</a></td>
+                    <td><a href="/Admin/DeleteVoting/@item.VotingID " class="button_delete">Delete</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <br />
+    <div><a href="/Admin/CreateVoting/ " class="button_add">Add Voting</a></div>
+    <br />
+</div>

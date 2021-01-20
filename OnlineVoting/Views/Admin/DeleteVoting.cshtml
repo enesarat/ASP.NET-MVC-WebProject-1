@@ -1,0 +1,42 @@
+﻿@model onlineVoting.Models.Voting
+
+@{
+    ViewBag.Title = "DeleteVoting";
+    Layout = "~/Views/Shared/_Layout _admin.cshtml";
+}
+
+<div class="page_header">Delete Voting</div>
+<div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="input_label">
+            @Html.ValidationSummary(true)
+            @Html.HiddenFor(Model => Model.VotingID)
+
+
+            <div class="form_model">
+                @Html.Label("Name:")
+                <span class="delete_layer">@Html.DisplayFor(Model => Model.VotingName)</span>
+            </div>
+            <div class="form_model">
+                @Html.Label("Voting Description:")
+                <span class="delete_layer">@Html.DisplayFor(Model => Model.QuestionLine)</span>
+            </div>
+            
+
+
+            <br />
+       
+
+            <div>
+                <span style="font-weight:lighter; color:darkred;">Are you sure you want to delete this voting?</span>
+                <br />
+                <br />
+                <input class="button_add" type="submit" value="Delete Voting" />
+            </div>
+        </div>
+
+    }
+</div>

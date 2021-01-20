@@ -1,0 +1,71 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Untitled Document</title>
+    <link type="text/css" rel="stylesheet" href="~/css/admin_style.css">
+</head>
+
+<body>
+    <!-- NAVBAR HEADER START -->
+    <div class="nav-bg">
+        <header class="header">
+
+
+            <div class="navbar_">
+                <nav class="navbar_left">
+                    <a class="kutu" href="/Admin/AdminIndex">Home</a>
+                </nav>
+                <div class="logo">
+                    <a href="/Admin/AdminIndex" title="Vote It!">VOTEIT</a>
+                </div>
+                <nav class="navbar_right">
+                    <a class="kutu" href="/Home/StartingLogin">Log Out</a>
+                </nav>
+            </div>
+
+        </header>
+    </div>
+    <!-- NAVBAR HEADER END -->
+    <!-- BOTTOM CONTAINER START -->
+    <div class="container">
+
+        <div class="container_left">
+            <a class="ctg_head">MANAGE <br> DATABASE</a>
+            <a class="ctg_but" href="/Admin/Users">VOTERS</a>
+            <a class="ctg_but" href="/Admin/Categories">CATEGORIES</a>
+            <a class="ctg_but" href="/Admin/Votings">VOTINGS</a>
+            <a class="ctg_but" href="/Admin/VotingStatus">VOTING <br> STATUS</a>
+        </div>
+
+        <div class="container_middle">
+            @RenderBody()
+        </div>
+
+        <div class="container_right">
+
+        </div>
+
+
+    </div>
+    <!-- BOTTOM CONTAINER END -->
+
+
+    <footer class="footer">
+        <div class="inner_footer">
+            <div class="footer_model">
+                <div class="footer_links">
+                    <a href="/Admin/AdminIndex">Admin Page</a>
+                    <a href="/Admin/Users">Users</a>
+                    <a href="/Admin/Votings">Votings</a>
+                    <a href="/Admin/Categories">Categories</a>
+                </div>
+                <h>© 2020 VoteIt, Inc.</h>
+                <div class="logo_footer">
+                    <a href="/Admin/AdminIndex" title="Vote It!">VOTEIT</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

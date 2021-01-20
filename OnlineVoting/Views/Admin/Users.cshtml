@@ -1,0 +1,52 @@
+﻿@model IEnumerable<onlineVoting.Models.Voter>
+@{
+    ViewBag.Title = "Users";
+    Layout = "~/Views/Shared/_Layout _admin.cshtml";
+}
+
+
+<div class="content_main_users">
+    <!--<p>content_main</p>	-->
+    <h2>USERS</h2>
+
+
+    <table class="TableStyle">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Country</th>
+                <th>Gender</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody id="tablo_hover">
+            @foreach(var item in Model)
+            {
+                
+                <tr>
+                    
+                       
+                        <td>@item.UserName</td>
+                        <td>@item.UserSurname</td>
+                        <td>@item.UserUsername</td>
+                        <td>@item.UserEmail</td>
+                        <td>@item.UserPassword</td>
+                        <td>@item.UserCountry</td>
+                        <td>@item.UserGender</td>
+                        <td>@item.UserAge</td>
+                    
+
+                    <td><a href="/Admin/EditUser/@item.UserID" class="button_update">Update</a></td>
+                    <td><a href="/Admin/DeleteUser/@item.UserID " class="button_delete">Delete</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <br />
+    <div><a href="/Admin/CreateUser/ " class="button_add">Add User</a></div>
+    <br />
+</div>

@@ -1,0 +1,54 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Untitled Document</title>
+    <link type="text/css" rel="stylesheet" href="~/css/style.css">
+</head>
+
+<body>
+
+    <div class="nav-bg">
+        <header class="header">
+            <div class="logo">
+                <a href="/Home/StartingPage" title="Vote It!">VOTEIT</a>
+            </div>
+
+            <div class="navbar_">
+                <nav class="navbar_left_starting">
+                    <a class="kutu" href="/Home/StartingPage">Home</a>
+                    <a class="kutu" href="/Home/StartingContact">Contact</a>
+                </nav>
+                <nav class="navbar_right_s">
+                    <a class="kutu" href="/Home/StartingLogin">Login</a>
+                    <a class="kutu" href="/Home/StartingSignUp">Sign Up</a>
+                </nav>
+            </div>
+
+        </header>
+    </div>
+    <div class="container">
+
+        @RenderBody()
+
+    </div>
+
+
+    <footer class="footer">
+        <div class="inner_footer">
+            <div class="footer_model">
+                <div class="footer_links">
+                    <a href="/Home/StartingSignUp">Sign Up</a>
+                    <a href="/Home/StartingLogin">Login</a>
+                    <a href="/Home/StartingPage">Home</a>
+                    <a href="/Home/StartingContact">Contact</a>
+                </div>
+                <h>© 2020 VoteIt, Inc.</h>
+                <div class="logo_footer">
+                    <a href="/Home/StartingPage" title="Vote It!">VOTEIT</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

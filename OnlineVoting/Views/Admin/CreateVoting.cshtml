@@ -1,0 +1,42 @@
+﻿@model onlineVoting.Models.Voting
+
+@{
+    ViewBag.Title = "CreateVoting";
+    Layout = "~/Views/Shared/_Layout _admin.cshtml";
+}
+
+
+
+<div class="page_header">Create Voting</div>
+<div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form_uda border_update">
+            @Html.ValidationSummary(true)
+
+            <div class="form_model">
+                @Html.Label("Name:")
+                @Html.EditorFor(Model => Model.VotingName, new { htmlAttributes = new { @class = "admin_input" } })
+            </div>
+            <div class="form_model">
+                @Html.Label("Voting Description:")
+                @Html.EditorFor(Model => Model.QuestionLine, new { htmlAttributes = new { @class = "admin_input" } })
+            </div>
+            <div class="form_model">
+                @Html.Label("Category:")
+                @Html.DropDownListFor(m => m.VCategoryID, (IEnumerable<SelectListItem>)ViewBag.qCategory, "Please Select", new { @class = "ddl_input" })
+            </div>
+
+
+            <br />
+          
+
+            <div>
+                <input class="button_add" type="submit" value="Create Voting" />
+            </div>
+        </div>
+
+    }
+</div>

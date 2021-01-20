@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WP_VoteIT_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityContainer Name="WP_VoteIT_DBEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Category" EntityType="WP_VoteIT_DBModel.Category" />
+    <EntitySet Name="Country" EntityType="WP_VoteIT_DBModel.Country" />
+    <EntitySet Name="Gender" EntityType="WP_VoteIT_DBModel.Gender" />
+    <EntitySet Name="Voter" EntityType="WP_VoteIT_DBModel.Voter" />
+    <EntitySet Name="Voting" EntityType="WP_VoteIT_DBModel.Voting" />
+    <EntitySet Name="Vote" EntityType="WP_VoteIT_DBModel.Vote" />
+  </EntityContainer>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="EditDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="CountryID" />
+    </Key>
+    <Property Name="CountryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CountryName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Gender">
+    <Key>
+      <PropertyRef Name="GenderID" />
+    </Key>
+    <Property Name="GenderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GenderName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Voter">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="UserSurname" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="UserUsername" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="UserEmail" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="UserPassword" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="UserCountry" Type="Int32" />
+    <Property Name="UserGender" Type="Int32" />
+    <Property Name="UserAge" Type="Int32" />
+    <Property Name="isAdmin" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Voting">
+    <Key>
+      <PropertyRef Name="VotingID" />
+    </Key>
+    <Property Name="VotingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VotingName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="VotingCategoryKEY" Type="Int32" />
+    <Property Name="QuestionLine" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="VCategoryID" Type="Int32" />
+    <Property Name="VCategoryName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="EditDate" Type="DateTime" Precision="3" />
+    <Property Name="YesOrNo" Type="Boolean" />
+    <Property Name="YesAmount" Type="Int32" />
+    <Property Name="NoAmount" Type="Int32" />
+    <Property Name="quantity" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Vote">
+    <Key>
+      <PropertyRef Name="VoteID" />
+    </Key>
+    <Property Name="VoteID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="User_Key" Type="Int32" />
+    <Property Name="Voting_Key" Type="Int32" />
+    <Property Name="Option_Key" Type="Int32" />
+    <Property Name="session_key" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="User_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

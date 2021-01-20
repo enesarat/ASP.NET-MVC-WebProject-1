@@ -1,0 +1,787 @@
+﻿@charset "utf-8";
+
+body{
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	margin:auto;
+	text-align: center;
+	display:flex;
+	flex-direction:column;
+	background-color:black;
+}
+.header {
+	margin: auto;
+	background-color: black;
+	width: 1200px;
+	height: 100px;
+	display: flex;
+	flex-direction: row;
+}
+
+.nav-bg{
+	background-color: #D7D7D7;
+}
+.navbar_{
+	padding-left:20px;
+	width:850px;
+	display:flex;
+	flex-direction: row;
+	justify-content: space-between;
+	
+}
+.navbar_left{
+	background-color: black;
+	width:520px;
+	height:100px;
+	display:flex;
+	flex-direction: row;
+
+}
+.navbar_left_starting {
+	background-color: black;
+	width: 260px;
+	height: 100px;
+	display: flex;
+	flex-direction: row;
+}
+
+.navbar_right {
+	background-color: black;
+	width: 130px;
+	height: 100px;
+	display: flex;
+	flex-direction: row;
+}
+.navbar_right_s {
+	background-color: black;
+	width: 260px;
+	height: 100px;
+	display: flex;
+	flex-direction: row;
+}
+
+a.kutu{
+	text-align: center;
+	padding:40px 20px 0px 20px;
+	margin:0px;
+	width:70px;
+	height:50px;
+	background-color: black;
+	color:darkgray;
+	text-decoration: none;
+	transition: 0.3s;
+}
+
+a.kutu:hover, a.kutu:focus{
+	border-bottom:solid 10px #0096FA;
+	color:white;	
+	outline:none;
+}
+
+.logo a {
+	display: block;
+	height: 62px;
+	width: 303px;
+	text-indent: -9999px;
+	outline: none;
+	background: url("../img/logo.png");
+	margin: 19px 0px 0px 35px;
+}
+
+.container{
+	width:100%;
+	height:600px;
+	
+}
+.cont_inner {
+	width: 1519px;
+	height: auto;
+	min-height: 650px;
+	background-color: #D7D7D7;
+	position:absolute;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-content: stretch;
+	margin: auto;
+}
+
+.plate_outline {
+	width: 1200px;
+	height:600px;
+	margin: auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+
+.plate_wrapper {
+	width: 600px;
+	height: 450px;
+	display: flex;
+	margin-top: auto;
+	margin-bottom: auto;
+	flex-direction: column;
+}
+
+.plate_wrapper_su{
+	width: 600px;
+	height: 550px;
+	background-color:red;
+	display: flex;
+	margin-top: auto;
+	margin-bottom: auto;
+	flex-direction: column;
+}
+
+.log_sign_plate{
+	width:600px;
+	height:350px;
+	background-color:white;
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	
+}
+
+.log_sign_plate_su {
+	width: 600px;
+	height: 550px;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+
+
+
+.log_sign_plate a {
+	font-size: 50px;
+	color: black;
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+.log_sign_plate_su a {
+	font-size: 50px;
+	color: black;
+	text-align: center;
+	padding-bottom: 10px;
+	margin-bottom:20px;
+}
+
+
+
+.log_sign_form_wrapper {
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	width: 100%;
+	margin-top:10px;
+
+}
+
+/* ----- LOGIN CSS START --------*/
+.log_sign_form {
+	color: black;
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	width: 100%;
+	position: relative;
+}
+
+.log_sign_form label {
+	position: absolute;
+	display:block;
+	top:27px;
+	height:0px;
+	left: 132px;
+	line-height: 15px;
+	font-size: 16px;
+	font-weight:lighter;
+	color: #5c5c5c;
+	transition:150ms all;
+	
+}
+
+.log_sign_form input{
+	width:60%;
+	height:30px;
+	font-size:16px;
+	box-sizing:border-box;
+	margin:auto;
+	margin-top:20px;
+	margin-bottom:10px;
+	border: 1px solid black;
+}
+.log_sign_form input:focus {
+	outline:none;
+	border:1px solid #0096FA;
+}
+
+.log_sign_form input:valid + label {
+	font-size: 14px;
+	top: 10px;
+	left: 128px;
+	color: #5c5c5c;
+	display: block;
+	background-color: #fff;
+	margin-top: auto;
+	margin-bottom: auto;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 15px;
+}
+
+.log_sign_form input:focus + label {
+	font-size: 14px;
+	top: 10px;
+	left: 128px;
+	color: #0096FA;
+	display: block;
+	background-color: #fff;
+	margin-top: auto;
+	margin-bottom: auto;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 15px;
+
+}
+/* ----- LOGIN CSS END --------*/
+
+/* ----- SIGN UP CSS START --------*/
+
+.vertical_inputs{
+	display:flex;
+	flex-direction:row;
+}
+
+.vertical_inputs_ddl {
+	color: black;
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	width: 30%;
+	position: relative;
+	margin-bottom: 15px;
+}
+
+.vertical_inputs_ddl label{
+	position: absolute;
+	display:block;
+	top:13px;
+	height:0px;
+	left: 132px;
+	line-height: 15px;
+	font-size: 16px;
+	font-weight:lighter;
+	color: #5c5c5c;
+	transition:150ms all;
+}
+
+.vertical_inputs_ddl select {
+	width:360px;
+	height:30px;
+	font-size:16px;
+	box-sizing:border-box;
+	margin:auto;
+	margin-top:5px;
+	margin-bottom:5px;
+	margin-right:68px;
+	margin-left:4px;
+	border: 1px solid black;
+}
+
+.vertical_inputs_ddl select:focus {
+	outline: none;
+	border: 1px solid #0096FA;
+}
+
+.vertical_inputs_ddl select::before + label {
+	font-size: 14px;
+	top: 15px;
+	left:10px;
+	color: #5c5c5c;
+	display: block;
+	background-color: #fff;
+	margin-top: auto;
+	margin-bottom: auto;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 20px;
+}
+
+.vertical_inputs_ddl select:valid + label {
+	font-size: 14px;
+	top: -5px;
+	left:10px;
+	color: #5c5c5c;
+	display: block;
+	background-color: #fff;
+	margin-top: auto;
+	margin-bottom: auto;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 20px;
+}
+
+.vertical_inputs_ddl select:focus + label {
+	font-size: 14px;
+	top: -5px;
+	left: 10px;
+	color: #0096FA;
+	display: block;
+	background-color: #fff;
+	margin-top: auto;
+	margin-bottom: auto;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 15px;
+}
+
+
+.log_sign_form_wrapper_us {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	margin: auto;
+	width: 100%;
+}
+
+.double_flex {
+	margin-left: 116px;
+	margin-right: 116px;
+
+}
+
+.log_sign_form_us {
+	color: black;
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	width: 100%;
+	position: relative;
+	margin-bottom:15px;
+}
+
+.log_sign_form_us label {
+	position: absolute;
+	display:block;
+	top:13px;
+	height:0px;
+	left: 132px;
+	line-height: 15px;
+	font-size: 16px;
+	font-weight:lighter;
+	color: #5c5c5c;
+	transition:150ms all;
+	
+}
+
+.log_sign_form_us input{
+	width:60%;
+	height:30px;
+	font-size:16px;
+	box-sizing:border-box;
+	margin:auto;
+	margin-top:5px;
+	margin-bottom:5px;
+	border: 1px solid black;
+}
+.log_sign_form_us input:focus {
+	outline:none;
+	border:1px solid #0096FA;
+}
+
+
+.log_sign_form_us input:valid + label {
+	font-size: 14px;
+	top: -5px;
+	left: 128px;
+	color: #5c5c5c;
+	display: block;
+	background-color: #fff;
+	margin-top: auto;
+	margin-bottom: auto;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 15px;
+}
+.log_sign_form_us input[type=email]:valid + label {
+	font-size: 14px;
+	top: -5px;
+	left: 128px;
+	color: #5c5c5c;
+	display: block;
+	background-color: #fff;
+	margin-top: auto;
+	margin-bottom: auto;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 15px;
+}
+
+
+.log_sign_form_us input:focus + label {
+	font-size: 14px;
+	top: -5px;
+	left: 128px;
+	color: #0096FA;
+	display: block;
+	background-color: #fff;
+	margin-top: auto;
+	margin-bottom: auto;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 15px;
+
+}
+/* DOUBLE INPUT*/
+.log_sign_form_us_double {
+	color: black;
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	width: 100%;
+	position: relative;
+	margin-bottom:15px;
+}
+
+.log_sign_form_us_double label {
+	position: absolute;
+	display:block;
+	top:13px;
+	height:0px;
+	left: 16px;
+	line-height: 15px;
+	font-size: 16px;
+	font-weight:lighter;
+	color: #5c5c5c;
+	transition:150ms all;
+	
+}
+
+.log_sign_form_us_double input{
+	width:96%;									/**/
+	height:30px;
+	font-size:16px;
+	box-sizing:border-box;
+	margin:auto;
+	margin-top:5px;
+	margin-bottom:5px;
+	border: 1px solid black;
+}
+.log_sign_form_us_double input:focus {
+	outline:none;
+	border:1px solid #0096FA;
+}
+
+.log_sign_form_us_double input:valid + label {
+	font-size: 14px;
+	top: -5px;
+	left: 12px;
+	color: #5c5c5c;
+	display: block;
+	background-color: #fff;
+	margin-top: auto;
+	margin-bottom: auto;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 15px;
+}
+
+.log_sign_form_us_double input:focus + label {
+	font-size: 14px;
+	top: -5px;
+	left: 12px;
+	color: #0096FA;
+	display: block;
+	background-color: #fff;
+	margin-top: auto;
+	margin-bottom: auto;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 15px;
+
+}
+/* DOUBLE INPUT END*/
+
+/* DDM START*/
+input[type=submit][class=su_button] {
+	width: 60%;
+	height: 30px;
+	margin-top: 0px;
+	margin-bottom: 10px;
+	margin-right:20%;
+	background-color: #0096FA;
+	border: 1px solid #007dd0;
+	color: white;
+	font-size: 16px;
+	font-weight: bold;
+	transition: 0.2s;
+	outline: 0;
+	cursor:pointer;
+}
+
+input[type=submit][class=su_button]:hover {
+	background-color: #3fb2fe;
+	outline: 0;
+}
+
+input[type=submit][class=su_button]:focus {
+	background-color: #3fb2fa;
+	outline: 3px solid rgba(47, 175, 255, 0.80);
+}
+
+/* ----- SIGN UP CSS END --------*/
+
+
+
+/*--------------------------------*/
+
+
+button[type=submit] {
+	width: 60%;
+	height: 30px;
+	margin: auto;
+	margin-top: -15px;
+	margin-bottom: 20px;
+	background-color: #0096FA;
+	border: 1px solid #007dd0;
+	color: white;
+	font-size: 16px;
+	font-weight: bold;
+	transition: 0.2s;
+	outline: 0;
+	cursor: pointer;
+}
+
+button[type=submit]:hover {
+	background-color: #3fb2fe;
+	outline: 0;
+}
+
+button[type=submit]:focus {
+	background-color: #3fb2fa;
+	outline: 3px solid rgba(47, 175, 255, 0.80);
+}
+/*-----------------------------------------------------*/
+
+.log_sign_plate_2 {
+	background-color: white;
+	height: 100px;
+	width: 600px;
+	margin-top:20px;
+	display:flex;
+	flex-direction:row;
+	justify-content:center;
+}
+.log_sign_plate_2 p{
+	font-size:16px;
+	font-weight:lighter;
+	color:black;
+	margin-top:auto;
+	margin-bottom:auto;
+}
+
+.to_signup {
+	width: 30%;
+	height: 23px;
+	background-color: #0096FA;
+	border: 1px solid #007dd0;
+	color: white;
+	font-size: 16px;
+	text-align: center;
+	font-weight: bold;
+	text-decoration: none;
+	padding-top: 5px;
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-left: 15px;
+	transition: 0.2s;
+	outline: none;
+}
+.log_sign_plate_2 a:hover {
+	background-color: #3fb2fe;
+	outline:none;
+}
+
+.log_sign_plate_2 a:focus {
+	background-color: #3fb2fa;
+	outline: 3px solid rgba(47, 175, 255, 0.80);
+}
+
+
+.figure-bg {
+	background: url("../img/figure.png") no-repeat center;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	height: 600px;
+}
+.figure-bg-C {
+	background: url("../img/figure.png") no-repeat center;
+	display: flex;
+	flex-direction: column;
+	height: 600px;
+	justify-content: center;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.container-sect {
+	width: 100%;
+	height: 600px;
+	background: linear-gradient(-45deg,#000,#000,#0859C6,#10A5F5,#00DBFF,#00DBFF,#10A5F5,#0859C6,#000,#000);
+	background-size: 400% 400%;
+	color: #fff;
+	font-family: Helvetica, sans-serif;
+	text-align: right;
+	font-size: 30px;
+	position: relative;
+	animation: change-bg 15s ease-in-out infinite;
+}
+
+.container-sect-C {
+	width: 100%;
+	height: 600px;
+	background: linear-gradient(-45deg,#000,#000,#0859C6,#10A5F5,#00DBFF,#00DBFF,#10A5F5,#0859C6,#000,#000);
+	background-size: 400% 400%;
+	color: #fff;
+	font-family: Helvetica, sans-serif;
+	font-size: 30px;
+	position: relative;
+	display:flex;
+	justify-content:center;
+	animation: change-bg 15s ease-in-out infinite;
+}
+
+.container_middle_V {
+	background-color: rgba(0, 0, 0, 0.40);
+	width: 919.5px;
+	
+	height: inherit;
+}
+
+.container-sect span{
+	font-size: 70px;
+	padding-left:40px;	
+}
+
+.card_wrapper {
+	display:flex;
+	justify-content:center;
+}
+
+#card{
+	display:flex;
+	background-color:black;
+	margin-left:50%;
+	justify-content: flex-start;
+}
+
+.logo-color{
+	color:#0096FA;
+}
+
+#card-title{
+	width:1050px;
+	display:flex;
+	justify-content: flex-end;	
+}
+
+#card-title a{
+	text-decoration: underline;
+	color:white;
+}
+
+#card-title a:hover, #card-title a:focus {
+	transition: 0.3s;
+	text-decoration: underline;
+	text-decoration-style: solid;
+	color:orangered;
+	outline:none;
+}
+.footer {
+	width: 100%;
+	height: 155px;
+	background-color: #000;
+	display: flex;
+	justify-content: center;
+	font-weight:lighter;
+}
+
+.inner_footer{
+	background-color:black;
+	width:1200px;
+	height:95px;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-evenly;
+	color:red;
+	margin-top:15px;
+}
+
+.footer_model {
+	width: 600px;
+	height: 60px;
+	margin-top: 15px;
+	text-align: center;
+	display:flex;
+	flex-direction:column;
+	justify-content:space-between;
+}
+
+.footer_model h {
+	margin-top: 16px;
+	color: #bababa;
+}
+
+.logo_footer a {
+	display: block;
+	height: 25px;
+	width: 121px;
+	text-indent: -9999px;
+	outline: none;
+	background: url("../img/logo_footer.png");
+	margin-right: auto;
+	margin-left: auto;
+	margin-top:8px;
+}
+
+.footer_links {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #5a5a5a;
+}
+
+.footer_links a{
+	text-decoration:none;
+	color:#bababa;
+	outline:none;
+}
+
+.footer_links a:hover, .footer_links a:focus{
+	color:#bababa;
+	text-decoration:underline;
+
+}
+
+
+
+
+@keyframes change-bg {
+	0%{
+		background-position: 0 50%;
+	}
+	50%{
+		background-position: 100% 50%;
+	}
+	100%{
+		background-position: 0 50%;
+	}
+}

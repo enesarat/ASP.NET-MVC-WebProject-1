@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WP_VoteIT_DBModelStoreContainer" CdmEntityContainer="WP_VoteIT_DBEntities1">
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="WP_VoteIT_DBModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Category">
+      <EntityTypeMapping TypeName="WP_VoteIT_DBModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="EditDate" ColumnName="EditDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Country">
+      <EntityTypeMapping TypeName="WP_VoteIT_DBModel.Country">
+        <MappingFragment StoreEntitySet="Country">
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Gender">
+      <EntityTypeMapping TypeName="WP_VoteIT_DBModel.Gender">
+        <MappingFragment StoreEntitySet="Gender">
+          <ScalarProperty Name="GenderName" ColumnName="GenderName" />
+          <ScalarProperty Name="GenderID" ColumnName="GenderID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Voter">
+      <EntityTypeMapping TypeName="WP_VoteIT_DBModel.Voter">
+        <MappingFragment StoreEntitySet="Voter">
+          <ScalarProperty Name="isAdmin" ColumnName="isAdmin" />
+          <ScalarProperty Name="UserAge" ColumnName="UserAge" />
+          <ScalarProperty Name="UserGender" ColumnName="UserGender" />
+          <ScalarProperty Name="UserCountry" ColumnName="UserCountry" />
+          <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+          <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+          <ScalarProperty Name="UserUsername" ColumnName="UserUsername" />
+          <ScalarProperty Name="UserSurname" ColumnName="UserSurname" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Voting">
+      <EntityTypeMapping TypeName="WP_VoteIT_DBModel.Voting">
+        <MappingFragment StoreEntitySet="Voting">
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="NoAmount" ColumnName="NoAmount" />
+          <ScalarProperty Name="YesAmount" ColumnName="YesAmount" />
+          <ScalarProperty Name="YesOrNo" ColumnName="YesOrNo" />
+          <ScalarProperty Name="EditDate" ColumnName="EditDate" />
+          <ScalarProperty Name="VCategoryName" ColumnName="VCategoryName" />
+          <ScalarProperty Name="VCategoryID" ColumnName="VCategoryID" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="QuestionLine" ColumnName="QuestionLine" />
+          <ScalarProperty Name="VotingCategoryKEY" ColumnName="VotingCategoryKEY" />
+          <ScalarProperty Name="VotingName" ColumnName="VotingName" />
+          <ScalarProperty Name="VotingID" ColumnName="VotingID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vote">
+      <EntityTypeMapping TypeName="WP_VoteIT_DBModel.Vote">
+        <MappingFragment StoreEntitySet="Vote">
+          <ScalarProperty Name="User_name" ColumnName="User_name" />
+          <ScalarProperty Name="session_key" ColumnName="session_key" />
+          <ScalarProperty Name="Option_Key" ColumnName="Option_Key" />
+          <ScalarProperty Name="Voting_Key" ColumnName="Voting_Key" />
+          <ScalarProperty Name="User_Key" ColumnName="User_Key" />
+          <ScalarProperty Name="VoteID" ColumnName="VoteID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

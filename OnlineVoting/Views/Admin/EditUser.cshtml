@@ -1,0 +1,76 @@
+﻿@model onlineVoting.Models.Voter
+@{
+    ViewBag.Title = "EditUser";
+    Layout = "~/Views/Shared/_Layout _admin.cshtml";
+}
+
+<div class="page_header">Update User</div>
+<div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form_uda border_update">
+            @Html.ValidationSummary(true)
+            @Html.HiddenFor(Model => Model.UserID)
+
+            <div class="form_model">
+                @Html.Label(" Name:")
+                @Html.EditorFor(Model => Model.UserName, new { htmlAttributes = new { @class = "admin_input" } })
+            </div>
+            <div class="form_model">
+                @Html.Label("Surname:")
+                @Html.EditorFor(Model => Model.UserSurname, new { htmlAttributes = new { @class = "admin_input" } })
+            </div>
+            <div class="form_model">
+                @Html.Label("Username:")
+                @Html.EditorFor(Model => Model.UserUsername, new { htmlAttributes = new { @class = "admin_input" } })
+            </div>
+            <div class="form_model">
+                @Html.Label("Email:")
+                @Html.EditorFor(Model => Model.UserEmail, new { htmlAttributes = new { @class = "admin_input" } })
+            </div>
+            <div class="form_model">
+                @Html.Label("Password:")
+                @Html.EditorFor(Model => Model.UserPassword, new { htmlAttributes = new { @class = "admin_input" } })
+            </div>
+            <div class="form_model">
+                @Html.Label("Country:")
+                @Html.DropDownListFor(m => m.UserCountry, (IEnumerable<SelectListItem>)ViewBag.qCountry, "Please Select", new { @class = "ddl_input" })
+                @*@Html.EditorFor(Model => Model.U_Country)*@
+            </div>
+            <div class="form_model">
+                @Html.Label("Gender:")
+                @Html.DropDownListFor(m => m.UserGender, (IEnumerable<SelectListItem>)ViewBag.qGender, "Please Select", new { @class = "ddl_input" })
+                @*@Html.EditorFor(Model => Model.U_Sex)*@
+            </div>
+            <div class="form_model">
+                @Html.Label("Age:")
+                @Html.EditorFor(Model => Model.UserAge, new { htmlAttributes = new { @class = "admin_input" } })
+            </div>
+            <br />
+            <label>Admin Permissions</label>
+            <div class="ratio_b">
+                @if (Model.isAdmin == true)
+                {
+                    <div><input type="radio" value="yes" checked id="isAdmin" name="isAdmin" />Yes</div>
+                    <div><input type="radio" value="no" id="isAdmin" name="isAdmin" />No</div>
+
+                }
+                else
+                {
+                    <div><input type="radio" value="yes" id="isAdmin" name="isAdmin" />Yes</div>
+                    <div><input type="radio" value="no" checked id="isAdmin" name="isAdmin" />No</div>
+
+                }
+            </div>
+            <br />
+        
+
+            <div>
+                <input class="button_add" type="submit" value="Update User" />
+            </div>
+        </div>
+
+    }
+</div>

@@ -1,0 +1,50 @@
+﻿@model onlineVoting.Models.Voter
+
+@{
+    ViewBag.Title = "DeleteUser";
+    Layout = "~/Views/Shared/_Layout _admin.cshtml";
+}
+
+<div class="page_header">Delete User</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="input_label">
+
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(Model => Model.UserID)
+
+        <div class="form_model">
+            @Html.Label("Name:")
+            <span class="delete_layer">@Html.DisplayFor(Model => Model.UserName)</span>
+
+        </div>
+        <div class="form_model">
+            @Html.Label("Surname:")
+            <span class="delete_layer">@Html.DisplayFor(Model => Model.UserSurname)</span>
+
+        </div>
+        <div class="form_model">
+            @Html.Label("Username:")
+            <span class="delete_layer">@Html.DisplayFor(Model => Model.UserUsername)</span>
+
+
+        </div>
+        <div class="form_model">
+            @Html.Label("Email:")
+            <span class="delete_layer">@Html.DisplayFor(Model => Model.UserEmail)</span>
+
+        </div>
+        <br />
+     
+        <div>
+            <span style="font-weight:lighter; color:darkred;">Are you sure you want to delete this user?</span>
+            <br />
+            <br />
+            <input class="button_add" type="submit" value="Delete User" />
+        </div>
+    </div>
+
+}

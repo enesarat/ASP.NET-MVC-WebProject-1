@@ -1,0 +1,31 @@
+﻿@model onlineVoting.Models.Category
+
+@{
+    ViewBag.Title = "EditCategory";
+    Layout = "~/Views/Shared/_Layout _admin.cshtml";
+}
+
+<div class="page_header">Update Category</div>
+<div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form_uda border_update">
+            @Html.ValidationSummary(true)
+            @Html.HiddenFor(m => m.CategoryID)
+            <div class="form_model">
+                @Html.Label("Name:")
+                @Html.EditorFor(Model => Model.CategoryName)
+            </div>
+
+            <br />
+
+
+            <div>
+                <input class="button_add" type="submit" value="Update Category" />
+            </div>
+        </div>
+
+    }
+</div>

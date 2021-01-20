@@ -1,0 +1,31 @@
+﻿@model onlineVoting.Models.Category
+
+@{
+    ViewBag.Title = "CreateCategory";
+    Layout = "~/Views/Shared/_Layout _admin.cshtml";
+}
+
+
+<div class="page_header">Create Category</div>
+<div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form_uda border_update">
+            @Html.ValidationSummary(true)
+
+            <div class="form_model">
+                @Html.Label("Name:")
+                @Html.EditorFor(Model => Model.CategoryName, new { htmlAttributes = new { @class = "admin_input" } })
+            </div>
+
+            <br />
+
+            <div>
+                <input class="button_add" type="submit" value="Create Category" />
+            </div>
+        </div>
+
+    }
+</div>

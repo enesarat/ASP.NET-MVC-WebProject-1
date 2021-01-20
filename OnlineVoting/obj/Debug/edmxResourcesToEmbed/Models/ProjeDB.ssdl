@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WP_VoteIT_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryName" Type="nvarchar" MaxLength="20" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="EditDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="CountryID" />
+    </Key>
+    <Property Name="CountryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CountryName" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="Gender">
+    <Key>
+      <PropertyRef Name="GenderID" />
+    </Key>
+    <Property Name="GenderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GenderName" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Vote">
+    <Key>
+      <PropertyRef Name="VoteID" />
+    </Key>
+    <Property Name="VoteID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_Key" Type="int" />
+    <Property Name="Voting_Key" Type="int" />
+    <Property Name="Option_Key" Type="int" />
+    <Property Name="session_key" Type="nvarchar" MaxLength="50" />
+    <Property Name="User_name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Voter">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="20" />
+    <Property Name="UserSurname" Type="nvarchar" MaxLength="20" />
+    <Property Name="UserUsername" Type="nvarchar" MaxLength="20" />
+    <Property Name="UserEmail" Type="nvarchar" MaxLength="30" />
+    <Property Name="UserPassword" Type="nvarchar" MaxLength="20" />
+    <Property Name="UserCountry" Type="int" />
+    <Property Name="UserGender" Type="int" />
+    <Property Name="UserAge" Type="int" />
+    <Property Name="isAdmin" Type="bit" />
+  </EntityType>
+  <EntityType Name="Voting">
+    <Key>
+      <PropertyRef Name="VotingID" />
+    </Key>
+    <Property Name="VotingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VotingName" Type="nvarchar" MaxLength="30" />
+    <Property Name="VotingCategoryKEY" Type="int" />
+    <Property Name="QuestionLine" Type="nvarchar" MaxLength="500" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="VCategoryID" Type="int" />
+    <Property Name="VCategoryName" Type="nvarchar" MaxLength="20" />
+    <Property Name="EditDate" Type="datetime" />
+    <Property Name="YesOrNo" Type="bit" />
+    <Property Name="YesAmount" Type="int" />
+    <Property Name="NoAmount" Type="int" />
+    <Property Name="quantity" Type="int" />
+  </EntityType>
+  <EntityContainer Name="WP_VoteIT_DBModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="WP_VotingSystem" store:Type="Tables" />
+    <EntitySet Name="Country" EntityType="Self.Country" Schema="WP_VotingSystem" store:Type="Tables" />
+    <EntitySet Name="Gender" EntityType="Self.Gender" Schema="WP_VotingSystem" store:Type="Tables" />
+    <EntitySet Name="Vote" EntityType="Self.Vote" Schema="WP_VotingSystem" store:Type="Tables" />
+    <EntitySet Name="Voter" EntityType="Self.Voter" Schema="WP_VotingSystem" store:Type="Tables" />
+    <EntitySet Name="Voting" EntityType="Self.Voting" Schema="WP_VotingSystem" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

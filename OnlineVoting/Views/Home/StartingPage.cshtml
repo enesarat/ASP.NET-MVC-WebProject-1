@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "StartingPage";
+    Layout = "~/Views/Shared/_Layout_starting_page.cshtml";
+}
+
+
+<section class="container-sect">
+    <div class="figure-bg">
+        <div id="card">
+            <span>WELCOME TO<br>VOTE<a class="logo-color">IT</a></span>
+        </div>
+        <div class="card_wrapper">
+            <div id="card-title">
+                
+                    <p>
+                        You can @Html.ActionLink("login", "StartingLogin", "Home") and start voting right now.<br>
+                        If you don't have an account, you can @Html.ActionLink("register", "StartingSignUp", "Home") and start voting right away.
+                    </p>
+                
+            </div>
+        </div>
+    </div>
+</section>

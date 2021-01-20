@@ -1,0 +1,40 @@
+﻿@model IEnumerable<onlineVoting.Models.Voting>
+
+@{
+    ViewBag.Title = "VotingStatus";
+    Layout = "~/Views/Shared/_Layout _admin.cshtml";
+}
+
+<div class="content_main_users">
+    <!--<p>content_main</p>	-->
+    <h2>VOTING STATUS</h2>
+
+
+    <table class="TableStyle">
+        <thead>
+            <tr>
+                <th>Voting Name</th>
+                <th>Voting Description</th>
+                <th>Voting Category</th>
+                <th>YES Vote</th>
+                <th>NO Vote</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>@item.VotingName</td>
+                    <td>@item.QuestionLine</td>
+                    <td>@item.VCategoryID</td>
+                    <td>@item.YesAmount</td>
+                    <td>@item.NoAmount</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div style="margin-bottom:50px;"></div>
+</div>
+

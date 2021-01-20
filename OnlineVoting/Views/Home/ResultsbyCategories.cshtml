@@ -1,0 +1,62 @@
+﻿@model onlineVoting.Models.viewModel
+@{
+    ViewBag.Title = "ResultsbyCategories";
+    Layout = "~/Views/Shared/_Layout_dynamic_pages.cshtml";
+}
+
+<div class="container_left">
+
+    <a class="ctg_head">CATEGORIES</a>
+    @foreach (var item in Model.Categories)
+    {
+        if (@item.CategoryName == "Graphic Design")
+        {
+            <a class="ctg_but2" href="/Home/ResultsbyCategories/@item.CategoryID">
+                @item.CategoryName
+            </a>
+        }
+        else
+        {
+            <a class="ctg_but" href="/Home/ResultsbyCategories/@item.CategoryID">
+                @item.CategoryName
+            </a>
+        }
+    }
+
+</div>
+
+<div class="container_middle">
+    <div class="page_header">Results</div>
+
+    <table class="TableStyle">
+        <thead>
+            <tr>
+                <th>Voting Name</th>
+                <th>Voting Description</th>
+                <th>Voting Category</th>
+                <th>YES Vote</th>
+                <th>NO Vote</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Votings)
+            {
+                <tr>
+
+                    <td>@item.VotingName</td>
+                    <td>@item.QuestionLine</td>
+                    <td>@item.VCategoryID</td>
+                    <td>@item.YesAmount</td>
+                    <td>@item.NoAmount</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div style="margin-bottom:50px;"></div>
+
+</div>
+
+<div class="container_right">
+
+</div>
